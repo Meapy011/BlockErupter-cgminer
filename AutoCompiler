@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#Update Dependencies
+sudo apt update
+
+#Install Dependencies for Cgminer
+sudo apt-get install autoconf gcc make git libcurl4-openssl-dev libncurses5-dev libtool libjansson-dev libudev-dev libusb-1.0-0-dev
+
+#Enter Cgminer
+cd cgminer
+
+#Autogen for Cgminer and Enabling Icarus for BlockErupter
+./autogen.sh --enable-icarus
+
+#Make Cgminer
+sudo make
