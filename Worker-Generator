@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "Save As:"
+read varsave
+echo \
+
+echo "Pool URL:"
+read varlink
+echo \
+
+echo "Pool Worker:"
+read varworker
+echo \
+
+echo "Worker Password:"
+read varpass
+echo \
+
+> $varsave
+
+echo "#!/bin/bash" >> $varsave
+echo "cd cgminer" >> $varsave
+echo "sudo ./cgminer -o $varlink -u $varworker -p $varpass --suggest-diff 1" >> $varsave
+
+chmod +x $varsave
+
+
